@@ -10,7 +10,7 @@ function Article({ article }: Props) {
       {article.image && (
         <img src={article.image} alt={article.title} className="articleImage" />
       )}
-      <div>
+      <div className="articleText">
         <div className="articleDetails">
           <p>{article.source} -</p>
           <p>

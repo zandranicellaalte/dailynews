@@ -1,9 +1,9 @@
 body {
+  max-width: 1900px;
+    height: 1080;
   background-color: rgb(230, 230, 230);
-}
-
-.childrenContainer {
-  margin: 10px;
+  padding: 10px;
+    margin: auto;
 }
 
 .Link {
@@ -30,6 +30,7 @@ body {
 }
 
 .darkmode {
+  grid-column-start: 5;
   color: brown;
   justify-self: Right;
   align-self: center;
@@ -64,6 +65,7 @@ body {
 .searchButton:disabled {
   color: darkgray;
 }
+
 .navLinksContainer {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -96,16 +98,13 @@ body {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-  padding: 10px;
-  width: 100%;
+    width: 100%;
 }
 
 .articleContainer {
   display: flex;
   flex-direction: row;
-    background-color: #fff;
-    height: 330px;
-    position: relative;
+  background-color: #fff;
     box-shadow: 3px 3px 10px darkgrey;
 }
 
@@ -115,13 +114,18 @@ body {
   object-fit: cover;
 }
 
+.articleText {
+  position: relative;
+  height: 100%;
+}
 .articleTitle {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
   font-size: 22px;
   font-weight: 700;
   padding: 0px 15px;
-    margin-top: 0;
+  margin-top: 0;
 }
+
 .articleDescription {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -137,19 +141,13 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   color: darkred;
-    padding: 0px 15px;
+  padding: 0px 15px;
   }
   
-  .readmoreContainer {
-    position: absolute;
-    bottom: 0;
-    right: auto;
-    left: auto;
-    width: 386px;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.readmoreContainer {
+  position: absolute;
+  bottom: 20px;
+    right: 20px;
   }
   
   .readmore-btn {
@@ -167,4 +165,97 @@ body {
     border: 1px solid darkred;
     border-radius: 25px;
     color: darkred;
+}
+@media only screen and (max-width: 1200px) {
+  .articleImage {
+    width: 250px;
+  }
+
+  .articleTitle {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .articleImage {
+    width: 200px;
+  }
+
+  .articleTitle {
+    font-size: 14px;
+  }
+
+  .articleDescription {
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .newsList {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .articleImage {
+    width: 330px;
+  }
+
+  .articleTitle {
+    font-size: 22px;
+  }
+
+  .articleDescription {
+    -webkit-line-clamp: 4;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .search {
+    display: none;
+  }
+
+  .navLinksContainer {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .articleImage {
+    width: 250px;
+  }
+
+  .articleTitle {
+    font-size: 20px;
+  }
+
+  .articleDescription {
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .articleContainer {
+    flex-direction: column;
+    height: 420px;
+  }
+
+  .articleImage {
+    width: 100%;
+    height: 200px;
+  }
+
+  .articleTitle {
+    font-size: 16px;
+  }
+
+  .articleDescription {
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .articleContainer {
+    height: 380px;
+  }
+
+  .articleImage {
+    height: 150px;
+  }
 }
