@@ -1,3 +1,6 @@
+import ReadMore from './ReadMore';
+import ATimeAgo from './ATimeAgo';
+
 type Props = {
   article: NewsArticle;
 };
@@ -8,17 +11,21 @@ function Article({ article }: Props) {
         <img src={article.image} alt={article.title} className="articleImage" />
       )}
       <div>
+        <div className="articleDetails">
+          <p>{article.source} -</p>
+          <p>
+            <ATimeAgo time={article.published_at} />
+          </p>
+        </div>
         <div>
           <h2 className="articleTitle">{article.title}</h2>
           <section>
             <p className="articleDescription">{article.description}</p>
           </section>
-          <footer className="articleFooter">
-            <p>{article.source} -</p>
-            <p>{article.published_at}</p>
-          </footer>
         </div>
-        <p>Read more</p>
+        <div className="readmoreContainer">
+          <ReadMore article={article} />
+        </div>
       </div>
     </article>
   );

@@ -94,45 +94,77 @@ body {
 
 .newsList {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   padding: 10px;
   width: 100%;
 }
 
 .articleContainer {
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  border-radius: 8px;
+  flex-direction: row;
+    background-color: #fff;
+    height: 330px;
+    position: relative;
+    box-shadow: 3px 3px 10px darkgrey;
 }
 
 .articleImage {
-  height: 224px;
-  width: 100%;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  height: 330px;
+    width: 300px;
   object-fit: cover;
 }
 
 .articleTitle {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+  font-size: 22px;
   font-weight: 700;
-  padding-left: 5px;
+  padding: 0px 15px;
+    margin-top: 0;
 }
 .articleDescription {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  padding-left: 5px;
+  padding: 0px 15px;
 }
 
-.articleFooter {
+.articleDetails {
   font-style: italic;
   font-size: 14px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-right: 5px;
+  color: darkred;
+    padding: 0px 15px;
+  }
+  
+  .readmoreContainer {
+    position: absolute;
+    bottom: 0;
+    right: auto;
+    left: auto;
+    width: 386px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .readmore-btn {
+    height: 40px;
+    width: 100px;
+    background-color: darkred;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .readmore-btn:hover {
+    background-color: transparent;
+    border: 1px solid darkred;
+    border-radius: 25px;
+    color: darkred;
 }
