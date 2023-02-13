@@ -8,7 +8,7 @@ type Props = {
 export default function Navlink({ category, isActive }: Props) {
   return (
     <Link
-      href={`/news/${category}`}
+      href={`/newscategory/${category}`}
       className={`navLink ${isActive && 'navLinkActive'}`}
     >
       {category}
