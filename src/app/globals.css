@@ -1,9 +1,22 @@
+:root {
+  --light: #FAFAFA;
+  --red-light: #FF5536;
+
+  --dark: #1b2744;
+  --red-dark: #FF8975;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   max-width: 1900px;
-    height: 1080;
-  background-color: rgb(230, 230, 230);
-  padding: 10px;
-    margin: auto;
+  height: 1080;
+  padding: 25px;
+  margin: auto;
+  background-color: var(--light);
 }
 
 .Link {
@@ -13,13 +26,12 @@ body {
 .headerContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  padding: 0px 30px;
   text-transform: uppercase;
 }
 
 .headerLogo {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-  color: rgb(24, 24, 27);
+  color: var(--red-light);
 }
 
 .search {
@@ -31,9 +43,13 @@ body {
 
 .darkmode {
   grid-column-start: 5;
-  color: brown;
   justify-self: Right;
   align-self: center;
+}
+
+.lightDark-btn {
+  background-color: transparent;
+  border: none;
 }
 
 .searchForm {
@@ -53,13 +69,13 @@ body {
   border: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  color: rgb(24, 24, 27);
+  color: var(--red-light);
 }
 
 .searchButton {
   background-color: transparent;
   border: none;
-  color: brown;
+  color: var(--red-light);
 }
 
 .searchButton:disabled {
@@ -75,19 +91,19 @@ body {
   padding: 16px 0px;
   width: 100%;
   text-align: center;
-  border-top: 1px solid darkred;
+  border-top: 1px solid var(--red-light);
 }
 
 .navLink {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
   text-decoration: none;
-  color: rgb(24, 24, 27);
+  color: var(--dark);
 }
 
 .navLink:hover,
 .navLinkActive {
   text-decoration-line: underline;
-  text-decoration-color: darkred;
+  text-decoration-color: var(--red-light);
   text-underline-offset: 4px;
   font-weight: 700;
   font-size: 18px;
@@ -97,32 +113,35 @@ body {
 .newsList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
+  gap: 20px;
+  width: 100%;
 }
 
 .articleContainer {
   display: flex;
   flex-direction: row;
-  background-color: #fff;
-    box-shadow: 3px 3px 10px darkgrey;
+  background-color: var(--light);
+  box-shadow: 3px 3px 10px darkgrey;
 }
 
 .articleImage {
   height: 330px;
-    width: 300px;
+  width: 300px;
   object-fit: cover;
 }
 
 .articleText {
   position: relative;
   height: 100%;
+  padding: 5px;
+  min-height: 300px;
 }
+
 .articleTitle {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
   font-size: 22px;
   font-weight: 700;
-  padding: 0px 15px;
+  padding: 10px 15px;
   margin-top: 0;
 }
 
@@ -140,32 +159,33 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  color: darkred;
+  color: var(--red-light);
   padding: 0px 15px;
-  }
-  
+}
+
 .readmoreContainer {
   position: absolute;
   bottom: 20px;
-    right: 20px;
-  }
-  
-  .readmore-btn {
-    height: 40px;
-    width: 100px;
-    background-color: darkred;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-  }
-  
-  .readmore-btn:hover {
-    background-color: transparent;
-    border: 1px solid darkred;
-    border-radius: 25px;
-    color: darkred;
+  right: 20px;
 }
+
+.readmore-btn {
+  height: 40px;
+  width: 100px;
+  background-color: var(--red-light);
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.readmore-btn:hover {
+  background-color: transparent;
+  border: 1px solid var(--red-light);
+  border-radius: 25px;
+  color: var(--red-light);
+}
+
 @media only screen and (max-width: 1200px) {
   .articleImage {
     width: 250px;
@@ -219,6 +239,10 @@ body {
 
   .articleImage {
     width: 250px;
+  }
+
+  .articleText {
+    min-height: 0px;
   }
 
   .articleTitle {
