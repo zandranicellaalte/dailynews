@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import NavCategoryLinks from './NavCategoryLinks';
 import SearchContainer from './SearchContainer';
-import LightDarkMode from './LightDarkMode';
 
 export default function Header() {
   return (
@@ -12,9 +11,6 @@ export default function Header() {
         </Link>
         <div className="search">
           <SearchContainer />
-        </div>
-        <div className="darkmode">
-          <LightDarkMode />
         </div>
       </div>
       <NavCategoryLinks />

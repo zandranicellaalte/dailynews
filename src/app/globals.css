@@ -6,17 +6,9 @@
   --red-dark: #FF8975;
 }
 
-* {
+body {
   margin: 0;
   padding: 0;
-}
-
-body {
-  max-width: 1900px;
-  height: 1080;
-  padding: 25px;
-  margin: auto;
-  background-color: var(--light);
 }
 
 .Link {
@@ -110,11 +102,16 @@ body {
   line-height: 28px;
 }
 
+.headerTitle {
+  text-transform: uppercase;
+  text-align: center;
+}
 .newsList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   width: 100%;
+  margin-top: 10px;
 }
 
 .articleContainer {
