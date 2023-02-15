@@ -1,8 +1,10 @@
 :root {
   --light: #FAFAFA;
+  --article-light: #ffffff;
   --red-light: #FF5536;
 
   --dark: #1b2744;
+  --article-dark: #2e3d5e;
   --red-dark: #FF8975;
 }
 
@@ -26,13 +28,6 @@ body {
   color: var(--red-light);
 }
 
-.search {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  justify-self: stretch;
-  align-self: center;
-}
-
 .darkmode {
   grid-column-start: 5;
   justify-self: Right;
@@ -42,48 +37,6 @@ body {
 .lightDark-btn {
   background-color: transparent;
   border: none;
-}
-
-.searchForm {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px;
-}
-
-.searchInput {
-  width: 100%;
-  background-color: transparent;
-  height: 56px;
-  border: none;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  color: var(--red-light);
-}
-
-.searchButton {
-  background-color: transparent;
-  border: none;
-  color: var(--red-light);
-}
-
-.searchButton:disabled {
-  color: darkgray;
-}
-
-.navLinksContainer {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
-  font-size: 14px;
-  line-height: 16px;
-  gap: 10px;
-  padding: 16px 0px;
-  width: 100%;
-  text-align: center;
-  border-top: 1px solid var(--red-light);
 }
 
 .navLink {
@@ -106,6 +59,7 @@ body {
   text-transform: uppercase;
   text-align: center;
 }
+
 .newsList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -117,7 +71,7 @@ body {
 .articleContainer {
   display: flex;
   flex-direction: row;
-  background-color: var(--light);
+  background-color: var(--article-light);
   box-shadow: 3px 3px 10px darkgrey;
 }
 
@@ -127,19 +81,37 @@ body {
   object-fit: cover;
 }
 
+.articlePageImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.articlePageImage {
+  max-width: 100%;
+  object-fit: cover;
+}
 .articleText {
   position: relative;
   height: 100%;
   padding: 5px;
-  min-height: 300px;
+  min-height: 325px;
 }
 
 .articleTitle {
   font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
   font-size: 22px;
   font-weight: 700;
-  padding: 10px 15px;
-  margin-top: 0;
+  padding: 0px 10px;
+    margin: 0;
+  }
+  
+  .articlePageTitle {
+    font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
 }
 
 .articleDescription {
@@ -147,7 +119,7 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  padding: 0px 15px;
+  padding: 0px 10px;
 }
 
 .articleDetails {
@@ -160,27 +132,19 @@ body {
   padding: 0px 15px;
 }
 
+.articleDetails p {
+  margin: 0;
+}
+
+.articlePageDetails h3,
+.articlePageDetails p {
+  margin: 0;
+  color: var(--red-light);
+}
 .readmoreContainer {
   position: absolute;
   bottom: 20px;
   right: 20px;
-}
-
-.readmore-btn {
-  height: 40px;
-  width: 100px;
-  background-color: var(--red-light);
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-}
-
-.readmore-btn:hover {
-  background-color: transparent;
-  border: 1px solid var(--red-light);
-  border-radius: 25px;
-  color: var(--red-light);
 }
 
 @media only screen and (max-width: 1200px) {

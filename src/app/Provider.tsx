@@ -1,7 +1,13 @@
 'use client';
 
 import { getDesignTokens } from '../theme/theme';
-import { ThemeProvider, createTheme, Box, Button } from '@mui/material';
+import {
+  ThemeProvider,
+  createTheme,
+  Box,
+  Button,
+  CssBaseline,
+} from '@mui/material';
 import { PaletteMode } from '@mui/material';
 import { useState } from 'react';
 import { Sun, Moon } from './icon';
@@ -21,7 +27,7 @@ export default function RootStyleRegistry({
       <Box
         component="body"
         sx={{
-          bgcolor: 'background.default',
+          backgroundColor: 'background.default',
           color: 'text.primary',
           maxWidth: '1900px',
           padding: '25px',
@@ -30,11 +36,10 @@ export default function RootStyleRegistry({
         }}
       >
         <Box
-          component="div"
           sx={{
             position: 'absolute',
-            top: '43px',
-            right: '25px',
+            top: '30px',
+            right: '20px',
           }}
         >
           {mode === 'dark' ? (
@@ -47,6 +52,7 @@ export default function RootStyleRegistry({
             </Button>
           )}
         </Box>
+        <CssBaseline />
         {children}
       </Box>
     </ThemeProvider>
