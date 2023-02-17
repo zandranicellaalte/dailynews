@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { Box, Button, TextField, FormControl, useTheme } from '@mui/material';
 
 function SearchContainer() {
