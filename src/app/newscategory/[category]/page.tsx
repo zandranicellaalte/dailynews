@@ -1,14 +1,24 @@
 import { categories } from '../../../../constants';
 import NewsList from '../../NewsList';
-import response from '../../../../response.json';
+import { getData } from '@/src/lib/getData';
+import sortByCategory from '@/src/lib/sortByCategory';
 
 type Props = {
   params: { category: Category };
 };
 
+export async function generateStaticParams() {
+  return categories.map((category) => ({
+    category: category,
+  }));
+}
+
 async function NewsCategory({ params: { category } }: Props) {
-  // const news: NewsRespons = await fetchNews(category);
-  const news: NewsRespons = response;
+  const newsResp = await getData(
+    'general,business,entertainment,health,science,sports,technology',
+    ''
+  );
+  const news = sortByCategory(newsResp, category);
 
   return (
     <div>
@@ -19,9 +29,3 @@ async function NewsCategory({ params: { category } }: Props) {
 }
 
 export default NewsCategory;
-
-export async function generateStaticParams() {
-  return categories.map((category) => ({
-    category: category,
-  }));
-}

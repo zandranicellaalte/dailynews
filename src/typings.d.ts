@@ -1,11 +1,11 @@
 type Category =
-  | "General"
-  | "Business"
-  | "Entertainment"
-  | "Health"
-  | "Science"
-  | "Sports"
-  | "Technology";
+  | "general"
+  | "business"
+  | "entertainment"
+  | "health"
+  | "science"
+  | "sports"
+  | "technology";
 
   type NewsArticle = {
     author: string | null;
